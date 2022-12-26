@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+:root {
+    --primary: #c7bfd3;
+    --secondary: #b7294a;
+}
+
+body {
+    background-color: var(--primary);
+    font-family: 'PT Serif', serif;
+    color: #fff;
+    transition: all 350ms;
+}
+
+main {
+    background-color: var(--secondary);
+    height: clamp(600px, 100vh, 100vh);
+    border-top-right-radius: 20vw;
+    border-top-left-radius: 20vw;
+    margin-top: 5rem;
+}
+
+.main-signup {
+    min-height: 1300px;
+}
+main > form {
+    width: clamp(250px, 70vw, 600px);
+    margin-inline: auto;
+    padding: 30px;
+}
+
+main > form > label,
+input {
+    display: block;
+}
+
+main > form > label {
+    font-weight: 500;
+    font-size: clamp(2rem, 2.5vw, 4rem);
+    margin-block: 0.5rem;
+    margin-top: 1rem;
+}
+
+main > form > input {
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: var(--primary) solid 2px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: clamp(1rem, 1.5vw, 2.4rem);
+    transition: color 300ms, backgorund, 300ms;
+    color: var(--primary);
+    font-family: inherit;
+}
+main > form > input::placeholder {
+    color: var(--primary);
+}
+main > form > input:focus {
+    color: #000;
+    background-color: #fff;
+}
+
+main > form > input[type='submit'] {
+    border: none;
+    background-color: var(--primary);
+    color: var(--secondary);
+    margin-top: 3.5rem;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+main > form > input[type='submit']:hover {
+    background-color: #fff;
+}
+
+main > form,
+main > #sign-up-section {
+    opacity: 0;
+}
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#sign-up-section {
+    width: clamp(250px, 70vw, 600px);
+    margin-inline: auto;
+    margin-top: 3.5rem;
+    position: relative;
+}
+
+#sign-up-section > .divider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+#sign-up-section > .divider > hr {
+    flex: 1 1;
+    border: none;
+    border-bottom: 2px solid var(--primary);
+}
+
+#sign-up-section > a {
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: clamp(1rem, 1.5vw, 2.4rem);
+    border-radius: 8px;
+    position: absolute;
+    padding: 15px;
+    margin-top: 5rem;
+    cursor: pointer;
+    transition: all 300ms;
+    text-decoration: none;
+    text-align: center;
+    bottom: -100px;
+    right: 20px;
+    left: 20px;
+}
+
+#sign-up-section > a:hover {
+    background-color: #fff;
+}
+
+.alert {
+    position: fixed;
+    background-color: rgba(255, 0, 0, 0.287);
+    color: #fff;
+    top: 0;
+    width: 100%;
+    font-size: clamp(1.2rem, 2vw, 3.2rem);
+    text-align: center;
+    padding-block: 15px;
+}
